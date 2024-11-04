@@ -19,6 +19,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdarg.h>
+
 # define HEXBASE_MIN "0123456789abcdef"
 # define HEXBASE_MAJ "0123456789ABCDEF"
 

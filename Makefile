@@ -10,7 +10,7 @@ DIR_SRCS		=	srcs
 
 DIR_OBJS		=	objs
 
-SRCS_NAMES		=	main.c \
+SRCS_NAMES		=	main.c parsing/parse_file.c
 
 
 OBJS_NAMES		=	${SRCS_NAMES:.c=.o}
@@ -70,9 +70,9 @@ $(OBJS) : $(DIR_OBJS)/%.o : $(DIR_SRCS)/%.c
 $(DIR_OBJS):
 	mkdir -p $(DIR_OBJS)
 	mkdir -p objs/parsing
-	mkdir -p objs/misc
-	mkdir -p objs/help
-	mkdir -p objs/game
+# mkdir -p objs/misc
+# mkdir -p objs/help
+# mkdir -p objs/game
 
 leaks:	${NAME}
 	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes ./cub3d $(dad)

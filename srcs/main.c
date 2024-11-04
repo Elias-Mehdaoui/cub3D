@@ -1,4 +1,4 @@
-#include "includes/cub3d.h"
+#include "../includes/cub3d.h"
 
 int main(int argc, char **argv)
 {
@@ -6,8 +6,8 @@ int main(int argc, char **argv)
     t_map map;
     t_args args;
 
-    if (argc == 3)
-        tobmp();
+    // if (argc == 3)
+    //     tobmp();
     
     fd = open(argv[1], O_RDWR);
     if (fd == -1)
