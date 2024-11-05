@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasekai <akasekai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 19:01:43 by akasekai          #+#    #+#             */
-/*   Updated: 2024/08/30 19:16:15 by akasekai         ###   ########.fr       */
+/*   Updated: 2024/11/05 04:18:34 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,9 @@ typedef struct s_map
 
 typedef struct s_args
 {
-    int x;
-    int y;
-    char    *NO;
-    char    *SO;
-    char    *WE;
-    char    *EA;
-    char    *S;
-    char    *F;
-    char    *C;
-    
+    char *path[4];
+    int floor[3];
+    int celling[3];  
 }   t_args;
 
 // int	check_newline(char *str);

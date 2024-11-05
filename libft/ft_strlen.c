@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:34:51 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/26 14:52:51 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/11/05 02:46:27 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,15 @@ size_t	ft_strlen(const char *str)
 	{
 		i++;
 	}
+	return (i);
+}
+
+size_t len_tab(char **tab)
+{
+	int i;
+	
+	i = 0;
+	while(tab[i])
+		i++;
 	return (i);
 }

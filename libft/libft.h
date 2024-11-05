@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:35:41 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/29 23:53:28 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/11/05 02:45:06 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include <fcntl.h>
 # include <limits.h>
+# include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <stdarg.h>
 
 # define HEXBASE_MIN "0123456789abcdef"
 # define HEXBASE_MAJ "0123456789ABCDEF"
@@ -80,6 +80,7 @@ int						ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t					ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t					ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t					ft_strlen(const char *str);
+size_t					len_tab(char **tab);
 char					*ft_strchr(char const *s, int c);
 char					*ft_strrchr(char const *s, int c);
 int						ft_strncmp(const char *s1, const char *s2, size_t n);
