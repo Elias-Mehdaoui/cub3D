@@ -2,8 +2,12 @@ NO wool/black_wool.xpm
 SO      wool/yellow_wool.xpm
 WE                   wool/cyan_wool.xpm                         
 EA wool/red_wool.xpm
+
+
+
+
+F 42,98,61
 C 171,191,219
-F            42,98,61
 
 1111111111111111111111111111111
 1000000000000000000000000000001
