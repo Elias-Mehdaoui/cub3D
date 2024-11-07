@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:02:29 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/11/07 04:50:20 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/11/07 06:44:21 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int check_args(char **file, t_args *args, t_map *map)
 			return (4);
 		i++;
 	}
-	if (check_map(file, i, args, map))
+	if (check_map(file, args, map))
 		return (5);
 	return (0);
 }
@@ -132,6 +132,9 @@ int	init_args(int fd, t_args *args, t_map *map)
 	str = recup_gnl(fd);
 	if (!close(fd) || !str)
 		return (ft_printf("Error\n%s\n", ERR), free(str), 0);
+	printf("str = %s\n", str);
+	if (check_newline(str))
+		return(printf("Error double newline"), 3);
 	file = ft_split(str, '\n');
 	free(str);
 	if (!file)

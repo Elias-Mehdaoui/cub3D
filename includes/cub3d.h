@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 19:01:43 by akasekai          #+#    #+#             */
-/*   Updated: 2024/11/07 04:33:48 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/11/07 06:41:18 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_pos
 {
 	int		x;
 	int		y;
-	int		face;
+	char	face;
 }			t_pos;
 
 typedef struct s_map
@@ -45,6 +45,8 @@ typedef struct s_args
 // t_map	*check_col(t_map *map);
 // void	get_index(t_map *map);
 // int	parse(t_map *map, int fd);
-int			check_map(char **file, int i, t_args *args, t_map *map);
+int			init_args(int fd, t_args *args, t_map *map);
+int			check_newline(char *str);
+int			check_map(char **file, t_args *args, t_map *map);
 
 #endif

@@ -39,7 +39,7 @@ CC				=	cc
 
 CDFLAGS 		= 	-MMD -MP
 
-CFLAGS			=	-g3 #-O3 -march=native # -Wall -Werror -Wextra
+CFLAGS			=	-g3 #-O3 -march=native  -Wall -Werror -Wextra
 
 MAKEFLAGS		=	--no-print-directory
 

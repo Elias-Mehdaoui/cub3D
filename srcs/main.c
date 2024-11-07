@@ -12,11 +12,10 @@ int main(int argc, char **argv)
     fd = open(argv[1], O_RDWR);
     if (fd == -1)
         return(ft_printf("Error fd\n"));
-    init_args(fd, &args);
+    init_args(fd, &args, &map);
 
 
     // if (!parse(&map, fd))
     //     return(0);
     
-
 }
