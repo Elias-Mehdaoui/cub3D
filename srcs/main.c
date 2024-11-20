@@ -13,8 +13,7 @@ int main(int argc, char **argv)
     if (fd == -1)
         return(ft_printf("Error fd\n"));
     init_args(fd, &args, &map);
-
-
+    close(fd);
     // if (!parse(&map, fd))
     //     return(0);
     

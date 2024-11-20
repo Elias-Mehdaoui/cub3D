@@ -40,11 +40,6 @@ typedef struct s_args
 	int		celling[3];
 }			t_args;
 
-// int	check_newline(char *str);
-// int	check_rectangle(t_map *map);
-// t_map	*check_col(t_map *map);
-// void	get_index(t_map *map);
-// int	parse(t_map *map, int fd);
 int			init_args(int fd, t_args *args, t_map *map);
 int			check_newline(char *str);
 int			check_map(char **file, t_args *args, t_map *map);
