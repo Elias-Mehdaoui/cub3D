@@ -98,9 +98,9 @@ int	check_map(char **file, t_args *args, t_map *map)
 	int j = 7;
 	map->tab = file + 6;
 	if (check_col(map))
-		return(free_tab(map->tab), ft_printf("Error check_col %i\n", 1));
+		return(ft_printf("Error check_col %i\n", 1));
 	get_index(map);
 	if (backtrack(map, map->player.x, map->player.y))
-		return(free_tab(map->tab), ft_printf("Error backtrack\n"), 1);
+		return(ft_printf("Error backtrack\n"), 1);
 	
 }

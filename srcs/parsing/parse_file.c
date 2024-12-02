@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:02:29 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/11/07 06:44:21 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/12/02 19:05:41 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int check_args(char **file, t_args *args, t_map *map)
 		i++;
 	}
 	if (check_map(file, args, map))
-		return (free_tab(map->tab), 5);
+		return (5);
 	return (0);
 }
 
@@ -143,7 +143,7 @@ int	init_args(int fd, t_args *args, t_map *map)
 	if (!file)
 		return (1);
 	if (check_args(file, args, map))
-		return (free_tab(file), 2);
+		return (2);
 	free_tab(file);
     print_struct(args);
 }
