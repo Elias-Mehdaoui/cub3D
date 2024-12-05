@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:02:29 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/12/05 17:55:51 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/12/05 19:26:56 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int store_rgb(char **rgb, t_args *args, int index)
 {
 	int i;
 	int j;
+	int nbr;
 	
 	i = 0;
     while(rgb[i])
@@ -68,6 +69,9 @@ int store_rgb(char **rgb, t_args *args, int index)
                 return (4);
 			j++;
         }
+		nbr = ft_atoi(rgb[i]);
+		if (nbr > 255)
+			return (5);
 		if (index == 4)
 			args->floor[i] = ft_atoi(rgb[i]);
 		else 
