@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 19:01:43 by akasekai          #+#    #+#             */
-/*   Updated: 2024/11/07 06:41:18 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/12/05 17:49:26 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ typedef struct s_args
 int			init_args(int fd, t_args *args, t_map *map);
 int			check_newline(char *str);
 int			check_map(char **file, t_args *args, t_map *map);
+int	is_border(char **tab, int i, int j);
 
 #endif

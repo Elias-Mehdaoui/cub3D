@@ -10,7 +10,7 @@ DIR_SRCS		=	srcs
 
 DIR_OBJS		=	objs
 
-SRCS_NAMES		=	main.c parsing/parse_file.c parsing/parsing_map.c
+SRCS_NAMES		=	main.c parsing/parse_file.c parsing/parsing_map.c parsing/parsing_utils.c
 
 
 OBJS_NAMES		=	${SRCS_NAMES:.c=.o}

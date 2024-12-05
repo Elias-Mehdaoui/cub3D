@@ -1,6 +1,8 @@
 #include "../../includes/cub3d.h"
 
 
+
+
 int	check_col(t_map *map)
 {
 	int			i;
@@ -57,21 +59,25 @@ void	print_tab(char **tab)
 		printf("%s\n", tab[i++]);
 }
 
-int backtrack(t_map *map, int x, int y)
+int check_wall(char **tab)
 {
-	if (map->tab[y][x] == '1' || map->tab[y][x] == '2')
-		return (0);
-	if (map->tab[y][x] != '0')
-		return (printf("%c\n", map->tab[y][x]), 1);
-	map->tab[y][x] = '2';
-	if (backtrack(map, x + 1, y))
-		return (2);
-	if (backtrack(map, x, y + 1))
-		return (3);
-	if (backtrack(map, x - 1, y))
-		return (4);
-	if (backtrack(map, x, y - 1))
-		return (5);
+	int i;
+	int j;
+
+	j = 0;
+	i = 0;
+	while(tab[i])
+	{
+		j = 0;
+		while(tab[i][j])
+		{
+			if (tab[i][j] == '0')
+				if (is_border(tab, i, j))
+					return (1);
+			j++;
+		}
+		i++;
+	}
 	return (0);
 }
 
@@ -100,7 +106,7 @@ int	check_map(char **file, t_args *args, t_map *map)
 	if (check_col(map))
 		return(ft_printf("Error check_col %i\n", 1));
 	get_index(map);
-	if (backtrack(map, map->player.x, map->player.y))
-		return(ft_printf("Error backtrack\n"), 1);
+	if (check_wall(map->tab))
+		return(ft_printf("Error map\n"), 1);
 	
 }

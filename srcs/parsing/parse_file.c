@@ -6,14 +6,14 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:02:29 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/12/02 19:05:41 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/12/05 17:55:51 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
 
-	 print_struct(t_args *args)
+print_struct(t_args *args)
 {
 	int i;
 
@@ -136,8 +136,8 @@ int	init_args(int fd, t_args *args, t_map *map)
 	if (!close(fd) || !str)
 		return (ft_printf("Error\n%s\n", ERR), free(str), 0);
 	printf("str = %s\n", str);
-	if (check_newline(str))
-		return(printf("Error double newline"), free(str), 3);
+	// if (check_newline(str))
+	// 	return(printf("Error double newline"), free(str), 3);
 	file = ft_split(str, '\n');
 	free(str);
 	if (!file)
