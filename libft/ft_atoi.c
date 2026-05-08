@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:28:34 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/11/07 00:37:33 by emehdaou         ###   ########.fr       */
+/*   Updated: 2025/03/10 22:51:54 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 long	ft_atoi(const char *str)
 {
-	int	i;
-	int	neg;
+	int		i;
+	int		neg;
 	long	result;
 
 	i = 0;

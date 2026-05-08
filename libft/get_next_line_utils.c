@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:58:33 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/11/04 22:46:27 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:16:39 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	*recup_gnl(int fd)
 			break ;
 		while (tmp[++i])
 			if (!ft_isprint(tmp[i]) && tmp[i] != '\n' && tmp[i] != '\0')
-				return (free(tmp), get_next_line(13, 1), NULL);
+				return (free(str), free(tmp), get_next_line(13, 1), NULL);
 		str = ft_strjoin(str, tmp);
 		if (!str)
 			return (free(str), NULL);

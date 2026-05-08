@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:35:41 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/11/05 02:45:06 by emehdaou         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:27:29 by tpassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ t_list_gnl				*ft_lstlast_gnl(t_list_gnl *lst);
 int						get_size(t_list_gnl *head);
 
 int						ft_printf(const char *str, ...);
-size_t					ft_strlen(const char *str);
 void					ft_putstr(char const *s, int fd, int *cnt);
 void					ft_putchar(char c, int fd, int *cnt);
 void					print_arg(char c, va_list args, int *cnt, long *j);
@@ -79,8 +78,9 @@ int						ft_memcmp(const void *s1, const void *s2, size_t n);
 
 size_t					ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t					ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t					ft_strlen(const char *str);
+int						ft_strlen(const char *str);
 size_t					len_tab(char **tab);
+char					*ft_strcpy(char *dest, const char *src);
 char					*ft_strchr(char const *s, int c);
 char					*ft_strrchr(char const *s, int c);
 int						ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -92,7 +92,7 @@ char					*ft_strdup(const char *s1);
 void					ft_striteri(char *s, void (*f)(unsigned int, char *));
 char					*ft_substr(char const *s, unsigned int start,
 							size_t len);
-char					**ft_split(char const *s, char c);
+char					**ft_split(char const *s, char *charset);
 void					free_tab(char **tab);
 char					*ft_strjoin(char *s1, char *s2);
 char					*ft_strmapi(char const *s, char (*f)(unsigned int,

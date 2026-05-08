@@ -1,7 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_map.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/27 00:03:52 by tpassin           #+#    #+#             */
+/*   Updated: 2025/03/05 16:29:09 by tpassin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/cub3d.h"
-
-
-
 
 int	check_col(t_map *map)
 {
@@ -23,7 +32,7 @@ int	check_col(t_map *map)
 		i++;
 	}
 	if (tmp['N' - 48] + tmp['W' - 48] + tmp['E' - 48] + tmp['S' - 48] != 1)
-		return (free_tab(tmp), 2);
+		return (2);
 	return (0);
 }
 
@@ -40,9 +49,9 @@ void	get_index(t_map *map)
 		{
 			if (ft_strchr("NSEW", map->tab[i][j]))
 			{
-				map->player.y = i;
-				map->player.x = j;
-				map->player.face = ft_strchr("NSEW", map->tab[i][j])[0];
+				map->pos.y = i;
+				map->pos.x = j;
+				map->pos.face = ft_strchr("NSEW", map->tab[i][j])[0];
 				map->tab[i][j] = '0';
 			}
 			j++;
@@ -50,26 +59,18 @@ void	get_index(t_map *map)
 		i++;
 	}
 }
-void	print_tab(char **tab)
+
+int	check_wall(char **tab)
 {
 	int	i;
-
-	i = 0;
-	while (tab[i])
-		printf("%s\n", tab[i++]);
-}
-
-int check_wall(char **tab)
-{
-	int i;
-	int j;
+	int	j;
 
 	j = 0;
 	i = 0;
-	while(tab[i])
+	while (tab[i])
 	{
 		j = 0;
-		while(tab[i][j])
+		while (tab[i][j])
 		{
 			if (tab[i][j] == '0')
 				if (is_border(tab, i, j))
@@ -81,32 +82,26 @@ int check_wall(char **tab)
 	return (0);
 }
 
-int	check_newline(char *str)
+int	check_map(char **file, t_args *args, t_map *map)
 {
 	int	i;
 
+	map->tab = NULL;
+	map->tab = file + 6;
 	i = 0;
-	while (str[i])
+	while (map->tab[i])
 	{
-		if (str[i + 1] && str[i] == '\n' && str[i + 1] == '\n')
-			return (1);
+		if (map->width < ft_strlen(map->tab[i]))
+			map->width = ft_strlen(map->tab[i]);
 		i++;
 	}
-	return (0);
-}
-
-int	check_map(char **file, t_args *args, t_map *map)
-{
-	int i;
-	char **tmp;
-
-	i = 0;
-	int j = 7;
-	map->tab = file + 6;
+	map->height = i;
 	if (check_col(map))
-		return(ft_printf("Error check_col %i\n", 1));
+		return (ft_printf("Error check_col\n"), free_args(args), free_tab(file),
+			1);
 	get_index(map);
 	if (check_wall(map->tab))
-		return(ft_printf("Error map\n"), 1);
-	
+		return (free_args(args), ft_printf("Error backtrack\n"), free_tab(file),
+			1);
+	return (0);
 }
